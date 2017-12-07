@@ -1,0 +1,73 @@
+#Setup SSH key
+1. cd ~/.ssh
+2. Generate SSH key: ssh-keygen -t rsa -C "your_email@youremail.com"
+3. Create Backup of key:
+	mkdir key_backup
+4. Copy files to key_backup
+5. Open RSA file: gedit id_rsa.pub
+6. Open the github site and login.
+7. Go to "Account Settings" (in the upper right corner from your page).
+8. Click: "SSH Keys"
+9. Click: "Add another public key"
+10.Paste the copied content into the "key field" and press "Add key
+11.Open Terminal and type: ssh-add
+
+#Connecting to Github
+1. ssh -T git@github.com 
+
+#Git initializing
+1. To see the curent version of git: git --version
+2. To add global name for git : git config global user.name "USERNAME"
+3. To add global email for git : git config global user.email "EMAIL"
+4. To show all details: git --list
+
+#Help
+1. git help <verb>
+	example: git help config
+2. git <verb> --help
+	example: git config --help
+
+#initilize local directory
+1. To initialize git in a directory: git init
+2  To remove git repository from a directory: rm -rf .git 
+
+#check Git status
+1. git status
+
+#ignore file(People can't see these files)
+1. touch .gitignore
+2. Open gitigonre file and type the file name you wan't to exclude
+	Example :.DS_Store
+			 .project
+			 *.pyc
+
+#Add files to staging area
+1. To add everything to staging area: git add -A
+2. To add a particular file : git add <FILENAME>
+
+#Remove files from staging area
+1. To remove everything from staging area: git reset
+2. To remove a particular file from staging area: git reset <FILENAME>
+
+#Commit files
+1. Commit all files in stage: git commit -m "COMMENT"
+2. To get recent log: git log
+
+#Cloning git repository
+1. git clone <WEBSITE> <Location> . : Here (.) means current directory
+
+#View information about remote repository
+1. git remote -v
+2. git remote -a
+
+#Create repository
+1. git remote add origin git@github.com:Shakibuzzaman3104/check.git : [origin] is alias for local git, Set different names for different repositories.
+2. git push -u origin master
+
+#Push/Pull changes
+1. To show the changes made in the the code of a file: git diff 
+2. To add file to staging area: git add -A
+3. To check current status: git status
+4. To commit the changed file: git commit -m "<COMMENT>" 
+5. Pull any changes from remote directory: git pull <REPOSITORY> <BRANCH> 
+6. Push any changes to remote directory: git push <REPOSITORY> <BRANCH> 
